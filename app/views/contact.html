@@ -1,0 +1,27 @@
+<div class="contact col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+  <form novalid name="messageForm" ng-submit="messageForm.$valid && send(data)">
+    <input type="text" name="email" ng-model="data.email" placeholder="Enter email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-change="sent=false" required>
+    <span class="error" ng-show="(messageForm.email.$dirty || submitted) && messageForm.email.$error.required">
+      Email is required
+    </span>
+    <span class="error" ng-show="messageForm.email.$error.pattern">
+      Please enter valid email
+    </span>
+    <textarea name="message" ng-model="data.message" placeholder="Enter message" rows="4" ng-minlength="10" ng-maxlength="10000" ng-change="sent=false" required>
+    </textarea>
+    <span class="error" ng-show="(messageForm.message.$dirty || submitted) && messageForm.message.$error.required">
+      Message is required
+    </span>
+    <span class="error" ng-show="messageForm.message.$error.minlength">
+      Message is too short (minimum 10 characters)
+    </span>
+    <input type="submit" value="Send" class="col-md-4 col-md-offset-8" ng-click="submitted = true"/>
+    <p ng-show="sent">
+      Your message was successfully sent
+      <br/>
+      email: {{data.email}}
+      <br/>
+      message: {{data.message}}
+    </p>
+  </form>
+</div>

@@ -1,0 +1,70 @@
+<menu></menu>
+<div id="wrapper">
+  <header></header>
+
+  <div class='container animals-menu'>
+    <div class="col-md-3 col-sm-6 col-xs-12" title='cats'>
+      <a ui-sref="cats">
+        Cats
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12" title='dogs'>
+      <a ui-sref="dogs">
+        Dogs
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12" title='horses'>
+      <a ui-sref="horses">
+        Horses
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12" title='contact us'>
+      <a ui-sref="contact">
+        Contact us
+      </a>
+    </div>
+  </div>
+
+  <div class="container content">
+    <ui-view></ui-viev>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <p>
+        Animals footer (angular test app)
+        <span class="btn btn-default" data-toggle="modal" data-target="#helpModal">
+          help
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="helpModal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">help modal</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <div class="col-xs-6">
+          <span class="btn btn-default" data-dismiss="modal" ng-click="consoleMsg(true)">
+            yes
+          </span>
+        </div>
+        <div class="col-xs-6">
+          <span class="btn btn-default" data-dismiss="modal" ng-click="consoleMsg(false)">
+            no
+          </span>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
